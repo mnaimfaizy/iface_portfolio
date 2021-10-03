@@ -1,38 +1,29 @@
-$bg-color: #fff;
-$h1-color: gray;
-$p-color: #cccccc;
+@import 'bootstrap-reboot';
+@import 'bootstrap-grid';
 
-* {
-    padding: 0px;
-    margin: 0px;
+.site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    padding-bottom: .25rem!important;
 }
 
-body {
-    background-color: $bg-color;
+.profile-image {
+    border: 5px solid #ccc;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
 
-ul.menu {
-    background-color: gray;
-    border: 1px solid black;
-    display: flex;
-
-    li {
-        display: inline-block;
-        padding: 0.5em;
-
-        a {
-            text-decoration: none;
-            color: #010101;
-
-        }
-    } 
-}
-
-h1 {
-    text-align: center;
-    vertical-align: middle;
-    color: #fff;
-    font-size: 2.5em;
+.button {
+    padding: 4px 12px;
+    background-color: none;
+    border: 2px solid blue;
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #ccc;
 }
 
 // * ---------------- Slider Section ------------------------ */ //
@@ -71,22 +62,10 @@ h1 {
 }
 
 // * ---------------- Footer Section ------------------------- */ //
-footer.footer {
+.footer {
     background-color: #ccc; 
     padding: 1.5em 0.6em;
-    display: flex;
 
-    div {
-        font-size: 1.0em;
-        justify-content: space-between;
-        width: 50%;
-
-        &:first-child {
-            text-align: left;
-        }
-
-        &:last-child {
-            text-align: right;
-        }
-    }
+    .copyright { text-align: left;}
+    .social-links { text-align: right;}
 }

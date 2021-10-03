@@ -1,12 +1,11 @@
 const path = require('path');
 module.exports = {
-    "mode": "none",
-    "entry": "./src/index.js",
-    "output": {
-        "path": __dirname + '/dist',
-        "filename": "bundle.js"
+    mode: "none",
+    entry: "./src/index.js",
+    output: {
+        path: __dirname + '/dist',
+        filename: "bundle.js"
     },
-    devtool: 'cheap-module-eval-source-map',
     devServer: {
         static: './dist'
     },
@@ -27,17 +26,18 @@ module.exports = {
             ]
           },
           {
-            test: /\.js$/,
-            exclude: /node_modules/,
+            test: /\.m?js$/,
+            exclude: /(node_modules|bower_components)/,
             use: {
-              loader: "babel-loader",
+              loader: 'babel-loader',
               options: {
-                presets: [
-                  "@babel/preset-env",
-                ]
+                presets: ['@babel/preset-env']
               }
             }
-          },
+          }
         ]
+      },
+      resolve: {
+        extensions: ['*', '.js']
       }
 }
