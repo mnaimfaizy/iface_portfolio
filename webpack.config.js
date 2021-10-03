@@ -6,6 +6,7 @@ module.exports = {
         "path": __dirname + '/dist',
         "filename": "bundle.js"
     },
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
         static: './dist'
     },
@@ -24,6 +25,18 @@ module.exports = {
                 },
               },
             ]
+          },
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: [
+                  "@babel/preset-env",
+                ]
+              }
+            }
           },
         ]
       }
