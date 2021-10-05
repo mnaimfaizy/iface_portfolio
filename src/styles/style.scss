@@ -1,69 +1,326 @@
 @import 'bootstrap-reboot';
 @import 'bootstrap-grid';
+@import 'portfolio-style';
+
+$bgColor: #F1FAEE;
+$primaryColor: #1D3557;
+$secondaryColor: #457B9D;
+$tirnaryColor: #A8DADC;
+$fourthColor: #E63946;
+
+$breakpoints: (phone: 640px, 
+               tablet: 768px, 
+               desktop: 1024px) !default;
+
+
+
+body {
+    background-color: none;
+}
 
 .site-header {
     background-color: rgba(0, 0, 0, .85);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
     padding-bottom: .25rem!important;
-}
 
-.profile-image {
-    border: 5px solid #ccc;
-    margin-top: 10px;
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-bottom: 5px;
+    a {
+        color: $tirnaryColor;
+
+        &:hover {
+            text-decoration: none;
+            color: $bgColor;
+        }
+    }
 }
 
 .button {
-    padding: 4px 12px;
+    padding: 5px 15px;
     background-color: none;
-    border: 2px solid blue;
+    border: 2px solid $primaryColor;
     font-size: 1.0rem;
     font-weight: bold;
-    color: #ccc;
+    color: $secondaryColor;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $primaryColor;
+        color: $bgColor;
+    }
 }
 
-// * ---------------- Slider Section ------------------------ */ //
-.slider {
-    height: 100%;
-    min-height: 50vh;
-    background-color: green;
+/* ------------------ Main Profile Section ------------------ */
+#main-profile {
+    background-color: #fff;
+
+    .profile-design {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .profile-image {
+        border: 5px solid #ccc;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
 }
 
 // * ---------------- About Me Section ------------------------ */ //
-.about-me {
-    height: 100%;
-    min-height: 50vh;
-    background-color: red;
+#about-me {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $bgColor;
+    text-align: justify; 
 }
 
-// * ---------------- Portfolio Section ------------------------ */ //
-.portfolio {
-    height: 100%;
-    min-height: 50vh;
-    background-color: black;
+/* ------------------ Education Section ------------------------ */
+#education {
+    padding: 50px;
+    background-color: #fff;
+
+    p { margin: 0px; }
+
+    .edu-title {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        border-bottom: 2px solid $primaryColor;
+        margin-bottom: 10px;
+    }
+
+    .edu-card {
+        padding: 30px;
+        background-color: $bgColor;
+        border-right: 1px solid $secondaryColor;
+        border-bottom: 1px solid $secondaryColor;
+        box-shadow: 4px 3px 5px $secondaryColor;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 25%;
+
+        .lead {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 26px;
+            margin: 0;
+            text-align: center;
+        }
+    
+        .type {
+            font-size: 14px;
+            color: $secondaryColor;
+        }
+    
+        .duration {
+            font-size: 12px;
+            font-weight: bold;
+            color: $fourthColor;
+            text-align: right;
+        }
+    
+        .info {
+            font-size: 12px;
+            color: $primaryColor;
+        }
+
+        &:hover {
+            box-shadow: 8px 6px 9px $secondaryColor;
+        }
+    }
 }
 
-// * ---------------- Services Section ------------------------ */ //
-.services {
-    height: 100%;
-    min-height: 50vh;
-    background-color: yellow;
+/* ------------------ Experience Section ------------------ */
+#experience {
+    padding: 50px;
+    background-color:$primaryColor;
+
+    p { margin: 0px; }
+
+    .exp-title {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        border-bottom: 2px solid $bgColor;
+        margin-bottom: 10px;
+        color: $bgColor;
+    }
+
+    .exp-card {
+        padding: 40px;
+        background-color: $bgColor;
+        border-right: 1px solid $secondaryColor;
+        border-bottom: 1px solid $secondaryColor;
+        box-shadow: 4px 3px 5px $secondaryColor;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 5% 25%;
+
+        .lead {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 26px;
+            margin: 0;
+            text-align: center;
+        }
+    
+        .type {
+            font-size: 14px;
+            color: $secondaryColor;
+        }
+    
+        .duration {
+            font-size: 12px;
+            font-weight: bold;
+            color: $fourthColor;
+            text-align: right;
+        }
+    
+        .info {
+            font-size: 12px;
+            color: $primaryColor;
+        }
+
+        &:hover {
+            box-shadow: 8px 6px 9px $secondaryColor;
+        }
+    }
 }
 
-// * ---------------- Contact Me Section ------------------------ */ //
-.contact-me {
-    height: 100%;
-    min-height: 50vh;
-    background-color: blue;
+/* ----------------- Portfolio Section --------------------- */
+#portfolio {
+    background-color: $bgColor;
+    padding: 60px;
+
+
+}
+
+/* ----------------- Contact ME ----------------- */
+#contact-me {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $primaryColor;
+    height: 100vh;
+
+    h1 {
+        color: $bgColor;
+        border-bottom: 2px solid $bgColor;
+        padding: 0px 10px;
+    }
+
+    /* form animation starts */
+    .form {
+        background: #fff;
+        box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+        border-radius: 5px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        border-top: 5px solid #0e3721;
+    /*   z-index: 1; */
+        animation: bounce 1.5s infinite;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 1.3em;
+    }
+
+    .title{
+        display: block;
+        font-family: sans-serif;
+        margin: 10px auto 5px;
+        width: 300px;
+      }
+
+      .pageTitle{
+        font-size: 2em;
+        font-weight: bold;
+      }
+      .secondaryTitle{
+        color: grey;
+      }
+
+      .name {
+        background-color: #ebebeb;
+        color: white;
+      }
+      .name:hover {
+        border-bottom: 5px solid #0e3721;
+        height: 30px;
+        width: 380px;
+        transition: ease 0.5s;
+      }
+      
+      .email {
+        background-color: #ebebeb;
+        height: 2em;
+      }
+      
+      .email:hover {
+        border-bottom: 5px solid #0e3721;
+        height: 30px;
+        width: 380px;
+        transition: ease 0.5s;
+      }
+      
+      .message {
+        background-color: #ebebeb;
+        overflow: hidden;
+        height: 10rem;
+      }
+      
+      .message:hover {
+        border-bottom: 5px solid #0e3721;
+        height: 12em;
+        width: 380px;
+        transition: ease 0.5s;
+      }
+
+      .formEntry {
+        display: block;
+        margin: 30px auto;
+        min-width: 300px;
+        padding: 10px;
+        border-radius: 2px;
+        border: none;
+        transition: all 0.5s ease 0s;
+      }
+
+      .submit {
+        width: 200px;
+        color: white;
+        background-color: #0e3721;
+        font-size: 20px;
+      }
+      
+      .submit:hover {
+        box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
+        transform: translateY(-3px);
+        width: 300px;
+        border-top: 5px solid #0e3750;
+        border-radius: 0%;
+      }
+
+      @keyframes bounce {
+        0% {
+          tranform: translate(0, 4px);
+        }
+        50% {
+          transform: translate(0, 8px);
+        }
+      } 
 }
 
 // * ---------------- Footer Section ------------------------- */ //
 .footer {
-    background-color: #ccc; 
+    background-color: $tirnaryColor; 
+    color: $primaryColor;
     padding: 1.5em 0.6em;
 
     .copyright { text-align: left;}
